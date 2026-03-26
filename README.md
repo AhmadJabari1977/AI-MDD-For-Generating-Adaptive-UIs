@@ -202,3 +202,14 @@ Minimal reproduction steps:
 4. Run notebooks/analysis/compute_metrics.ipynb to compute SSIM/MS-SSIM/LPIPS (LPIPS optional).
 5. Run notebooks/models/train_selector_planner.ipynb to reproduce selector/planner experiments and notebooks/analysis/evaluate/policies.ipynb for cost simulations.
 All CSVs, random-seed hashes and a small sample dataset for quick checks are included in the artifact bundle.
+
+## Citation
+
+If you use this work, please cite:
+
+@misc{aljabari2026aimdd,
+  author = {Ahmad Aljabari},
+  title = {AI-MDD-For-Generating-Adaptive-UIs},
+  year = {2026},
+  howpublished = {https://github.com/AhmadJabari1977/AI-MDD-For-Generating-Adaptive-UIs}
+}
