@@ -235,7 +235,7 @@ Evaluation of UI generation quality and efficiency
 Training and validation of AI models (Selector & Planner)
 Further analysis and benchmarking of adaptive UI generation
 
-The main outputs folders\file 
+### The main outputs folders\file: 
 processed_pim/                 # Generated PIM models
 webui_dataset/                # Source dataset (partial / references)
 features.csv                  # Base feature matrix
