@@ -71,7 +71,7 @@ All experiments can be reproduced using standard Python environments.
 ---
 ## Notebook Structure and Cell Description
 
-The notebook `FinalWorks.ipynb` provides an end-to-end implementation of the proposed AI–MDD pipeline. For clarity and reproducibility, each section of the notebook is organized into logically structured cells as described below:
+The notebook `AI-MDD Code.ipynb` provides an end-to-end implementation of the proposed AI–MDD pipeline. For clarity and reproducibility, each section of the notebook is organized into logically structured cells as described below:
 
 ---
 
@@ -202,6 +202,56 @@ Minimal reproduction steps:
 4. Run notebooks/analysis/compute_metrics.ipynb to compute SSIM/MS-SSIM/LPIPS (LPIPS optional).
 5. Run notebooks/models/train_selector_planner.ipynb to reproduce selector/planner experiments and notebooks/analysis/evaluate/policies.ipynb for cost simulations.
 All CSVs, random-seed hashes and a small sample dataset for quick checks are included in the artifact bundle.
+
+Optional extended description
+
+This commit includes the full set of artifacts generated from executing the AI–MDD pipeline for intelligent UI generation. The outputs reflect all major stages of the pipeline, from data preprocessing to evaluation and selection.
+
+Included artifacts:
+
+Processed PIM data
+Structured platform-independent models extracted from raw UI representations (e.g., WebUI dataset), serving as the foundation for downstream transformations.
+Feature datasets (features.csv, extended_features.csv)
+Preprocessed and normalized feature matrices capturing structural, visual, and interaction characteristics used for training the Selector model.
+Transformation metadata (transform_metadata.csv)
+Detailed logs of transformation steps, execution times, and configuration parameters used during candidate generation.
+Generated UI candidates (generated_code_hybrid/)
+Multiple UI implementations produced via hybrid template-based generation, including intermediate and final HTML outputs.
+Rendering and evaluation results (ssim_scores_pw_batch.csv, ssim_merged_fixed.csv)
+Perceptual similarity scores (SSIM and related metrics) computed using headless rendering (Playwright) to assess visual fidelity against ground truth.
+Selection outputs (candidates_best_per_id.csv, selection_manifest_predicted.csv)
+Final selected UI candidates per instance, based on model predictions and ranking strategies.
+Statistical analysis results (ssim_correlations.csv, figures)
+Correlation analysis and statistical summaries evaluating relationships between UI complexity, transformation cost, and visual quality.
+Model artifacts (selector_centroid_model.npz, metadata)
+Trained Selector model (fallback centroid-based) and associated configuration used for primitive prediction.
+
+Purpose:
+
+These outputs enable:
+
+Reproducibility of the experimental pipeline
+Evaluation of UI generation quality and efficiency
+Training and validation of AI models (Selector & Planner)
+Further analysis and benchmarking of adaptive UI generation
+
+├── processed_pim/                 # Generated PIM models
+├── webui_dataset/                # Source dataset (partial / references)
+├── features.csv                  # Base feature matrix
+├── extended_features.csv         # Enriched features
+├── transform_metadata.csv        # Transformation logs
+├── generated_code_hybrid/        # Generated UI candidates
+│   ├── candidates/
+│   ├── tmp_*/
+├── ssim_scores_pw_batch.csv      # Raw SSIM scores
+├── ssim_merged_fixed.csv         # Cleaned evaluation results
+├── ssim_correlations.csv         # Statistical analysis
+├── candidates_best_per_id.csv    # Best candidate per instance
+├── selection_manifest_predicted.csv # Model predictions
+├── selector_centroid_model.npz   # Trained fallback model
+├── selector_metadata.json        # Model configuration
+├── pw_batch.py                   # Rendering & SSIM script
+├── FinalWorks.ipynb              # Main experimental notebook
 
 ## Citation
 
