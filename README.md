@@ -235,23 +235,22 @@ Evaluation of UI generation quality and efficiency
 Training and validation of AI models (Selector & Planner)
 Further analysis and benchmarking of adaptive UI generation
 
-├── processed_pim/                 # Generated PIM models
-├── webui_dataset/                # Source dataset (partial / references)
-├── features.csv                  # Base feature matrix
-├── extended_features.csv         # Enriched features
-├── transform_metadata.csv        # Transformation logs
-├── generated_code_hybrid/        # Generated UI candidates
-│   ├── candidates/
-│   ├── tmp_*/
-├── ssim_scores_pw_batch.csv      # Raw SSIM scores
-├── ssim_merged_fixed.csv         # Cleaned evaluation results
-├── ssim_correlations.csv         # Statistical analysis
-├── candidates_best_per_id.csv    # Best candidate per instance
-├── selection_manifest_predicted.csv # Model predictions
-├── selector_centroid_model.npz   # Trained fallback model
-├── selector_metadata.json        # Model configuration
-├── pw_batch.py                   # Rendering & SSIM script
-├── FinalWorks.ipynb              # Main experimental notebook
+The main outputs folders\file 
+processed_pim/                 # Generated PIM models
+webui_dataset/                # Source dataset (partial / references)
+features.csv                  # Base feature matrix
+extended_features.csv         # Enriched features
+transform_metadata.csv        # Transformation logs
+generated_code_hybrid/        # Generated UI candidates
+candidates/ tmp_*/
+ssim_scores_pw_batch.csv      # Raw SSIM scores
+ssim_merged_fixed.csv         # Cleaned evaluation results
+ssim_correlations.csv         # Statistical analysis
+candidates_best_per_id.csv    # Best candidate per instance
+selection_manifest_predicted.csv # Model predictions
+selector_centroid_model.npz   # Trained fallback model
+selector_metadata.json        # Model configuration
+pw_batch.py                   # Rendering & SSIM script
 
 ## Citation
 
